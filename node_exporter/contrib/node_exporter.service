@@ -3,7 +3,7 @@ Description=Prometheus Node Exporter Service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/node_exporter -web.listen-address=:9092 -collectors.enabled=conntrack,diskstats,entropy,filefd,filesystem,loadavg,mdadm,meminfo,netdev,netstat,sockstat,stat,textfile,time,uname,vmstat --collector.textfile.directory=/opt/prometheus
+ExecStart=/usr/bin/node_exporter --no-collector.zfs --no-collector.arp --no-collector.bcache --no-collector.conntrack --no-collector.edac --no-collector.entropy --no-collector.ipvs --no-collector.textfile --no-collector.mdadm --no-collector.infiniband --no-collector.wifi --no-collector.timex --no-collector.xfs
 User=prometheus
 
 [Install]
