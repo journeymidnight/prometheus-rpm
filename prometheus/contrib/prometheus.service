@@ -3,7 +3,7 @@ Description=Prometheus
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/prometheus -config.file=/etc/prometheus/prometheus.yaml -web.console.libraries=/usr/share/prometheus/console_libraries -web.console.templates=/usr/share/prometheus/consoles -storage.local.path=/var/lib/prometheus/data
+ExecStart=/usr/bin/prometheus --config.file=/etc/prometheus/prometheus.yaml --web.console.libraries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/consoles --storage.tsdb.path=/var/lib/prometheus/data
 User=prometheus
 
 [Install]
