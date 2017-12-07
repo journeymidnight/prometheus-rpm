@@ -3,7 +3,7 @@ Description=Prometheus Alertmanager
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/prometheus -config.file=/etc/prometheus/alertmanager/alertmanager.yaml
+ExecStart=/usr/bin/alertmanager --config.file=/etc/prometheus/alertmanager/alertmanager.yaml
 User=prometheus
 
 [Install]
