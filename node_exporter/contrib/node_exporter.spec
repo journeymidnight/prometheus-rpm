@@ -70,6 +70,7 @@ chmod 774 /var/run/prometheus
 chown prometheus:prometheus /opt/prometheus
 chmod 744 /opt/prometheus
 sudo service node_exporter start
+sudo systemctl enable node_exporter
 
 %files
 %defattr(-,root,root,-)
