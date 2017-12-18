@@ -30,7 +30,7 @@ mkdir -vp $RPM_BUILD_ROOT/usr/lib/systemd/system
 mkdir -vp $RPM_BUILD_ROOT/etc/sysconfig
 mkdir -vp $RPM_BUILD_ROOT/opt/prometheus
 install -m 755 node_exporter-%{version}.linux-amd64/node_exporter $RPM_BUILD_ROOT/usr/bin/node_exporter
-install -m 755 contrib/node_exporter.service $RPM_BUILD_ROOT/usr/lib/systemd/system/node_exporter.service
+install -m 644 contrib/node_exporter.service $RPM_BUILD_ROOT/usr/lib/systemd/system/node_exporter.service
 install -m 644 contrib/node_exporter.sysconfig $RPM_BUILD_ROOT/etc/sysconfig/node_exporter
 
 %clean
@@ -43,8 +43,9 @@ getent passwd prometheus >/dev/null || \
 exit 0
 
 %post
-chgrp prometheus /var/run/prometheus
+chown prometheus:prometheus /var/run/prometheus
 chmod 774 /var/run/prometheus
+
 chown prometheus:prometheus /opt/prometheus
 chmod 744 /opt/prometheus
 sudo service node_exporter start
