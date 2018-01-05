@@ -2,7 +2,7 @@ pipeline:
   build:
     image: centos
     commands:
-      -  yum install -y rpm-build wget
+      -  yum install -y rpm-build wget make
       - "sh build.sh"
   github_release:
     image: plugins/github-release
