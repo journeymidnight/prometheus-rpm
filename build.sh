@@ -7,7 +7,7 @@ for NAME in "${NAMES[@]}"; do
     cd $NAME && rm -rf rpmbuild && make && cd ..
 done
 
-find . -name "*.centos.x86_64.rpm"|grep -v sysvinit|while read line do 
+find . -name "*.centos.x86_64.rpm"|grep -v sysvinit|while read line ;do 
 	cp $line .
 done
 
