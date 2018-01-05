@@ -89,6 +89,7 @@ chmod 744 /var/log/prometheus
 %if %{with systemd}
 /usr/lib/systemd/system/prometheus.service
 %endif
+chown prometheus:prometheus -R /etc/prometheus
 
 %files
 %defattr(-,root,root,-)
