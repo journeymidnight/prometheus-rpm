@@ -1,0 +1,17 @@
+pipeline:
+  build:
+    image: centos
+    commands:
+      -  yum install -y rpm-build wget
+      - "sh build.sh"
+  github_release:
+    image: plugins/github-release
+    files:
+      - "*.rpm"
+    secrets: [github_token]
+    when:
+      event: [tag]
+  pushbear:
+    image: thesues/drone-pushbear
+    url: XXXX
+    secrets: [sendkey]
