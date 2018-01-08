@@ -8,6 +8,8 @@ pipeline:
     image: plugins/github-release
     files:
       - "*.rpm"
+    checksum:
+      - md5
     secrets: [github_token]
     when:
       event: [tag]
