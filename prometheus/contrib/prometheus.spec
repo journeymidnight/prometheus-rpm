@@ -87,6 +87,8 @@ chmod 774 /var/run/prometheus
 chown prometheus:prometheus /var/log/prometheus
 chmod 744 /var/log/prometheus
 chown prometheus:prometheus -R /etc/prometheus
+systemctl enable prometheus
+systemctl start prometheus
 
 %files
 %defattr(-,root,root,-)

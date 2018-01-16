@@ -69,8 +69,8 @@ chgrp prometheus /var/run/prometheus
 chmod 774 /var/run/prometheus
 chown prometheus:prometheus /opt/prometheus
 chmod 744 /opt/prometheus
-sudo service node_exporter start
-sudo systemctl enable node_exporter
+systemctl enable node_exporter
+systemctl start node_exporter
 
 %files
 %defattr(-,root,root,-)

@@ -30,8 +30,8 @@ install -D -m 644 contrib/ceph_exporter.service $RPM_BUILD_ROOT/usr/lib/systemd/
 
 %post
 
-sudo systemctl start ceph_exporter
-sudo systemctl enable ceph_exporter
+systemctl enable ceph_exporter
+systemctl start ceph_exporter
 
 %files
 %defattr(-,root,root,-)
