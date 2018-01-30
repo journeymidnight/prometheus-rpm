@@ -1,5 +1,5 @@
 #!/bin/bash
-NAMES=(alertmanager ceph_exporter node_exporter prometheus )
+NAMES=(alertmanager ceph_exporter node_exporter prometheus libvirt_exporter)
 
 for NAME in "${NAMES[@]}"; do
     VERSION=$(cat "$NAME/VERSION")
